@@ -11,24 +11,24 @@ public class Person {
         FEMALE
     }
 
-    String Name;
+    String name;
     LocalDate birthday;
     Sex gender;
     String emailAddress;
 
     public Person(String name, LocalDate birthday, Sex gender, String emailAddress) {
-        Name = name;
+        this.name = name;
         this.birthday = birthday;
         this.gender = gender;
         this.emailAddress = emailAddress;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public LocalDate getBirthday() {
@@ -41,10 +41,6 @@ public class Person {
 
     public Sex getGender() {
         return gender;
-    }
-
-    public void setGender(Sex gender) {
-        this.gender = gender;
     }
 
     public String getEmailAddress() {
@@ -66,7 +62,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "Name='" + Name + '\'' +
+                "Name='" + name + '\'' +
                 ", birthday=" + birthday +
                 ", gender=" + gender +
                 ", emailAddress='" + emailAddress + '\'' +
