@@ -24,6 +24,6 @@ public class SelectiveServiceTest {
 
     @Test
     public void selectiveServiceTest() {
-        warehouse.printPersons(warehouse.getRoster(), );
+
     }
 }

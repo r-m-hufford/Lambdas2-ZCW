@@ -10,7 +10,7 @@ public class PeopleWarehouse {
 /*    CheckPerson testFunc = (p) -> p.getGender() == Person.Sex.MALE
             && p.getAge() >= 18
             && p.getAge() <= 25;*/
-    Predicate<Person> selectiveService = (person -> person.getGender() == Person.Sex.MALE
+    public static Predicate<Person> selectiveService = (person -> person.getGender() == Person.Sex.MALE
             && person.getAge() >= 18
             && person.getAge() <= 25);
 
