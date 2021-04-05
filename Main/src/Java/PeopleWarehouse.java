@@ -40,13 +40,13 @@ public class PeopleWarehouse {
                         && person.getAge() <= 25;
             }
         };
-
         for (Person person : roster) {
             if (tester.test(person)) {
                 person.printPerson();
             }
         }
     }
+
 
     public void isOlderThan(List<Person> roster, Integer age) {
         tester = new CheckPerson() {
@@ -55,13 +55,13 @@ public class PeopleWarehouse {
                 return person.getAge() > age;
             }
         };
-
         for (Person person : roster) {
             if (tester.test(person)) {
                 person.printPerson();
             }
         }
     }
+
 
     public void isMale(List<Person> roster) {
         tester = new CheckPerson() {
@@ -70,13 +70,13 @@ public class PeopleWarehouse {
                 return person.getGender() == Person.Sex.MALE;
             }
         };
-
         for (Person person : roster) {
             if (tester.test(person)) {
                 person.printPerson();
             }
         }
     }
+
 
     public void isFemale(List<Person> roster) {
         tester = new CheckPerson() {
@@ -85,7 +85,6 @@ public class PeopleWarehouse {
                 return person.getGender() == Person.Sex.FEMALE;
             }
         };
-
         for (Person person : roster) {
             if (tester.test(person)) {
                 person.printPerson();
