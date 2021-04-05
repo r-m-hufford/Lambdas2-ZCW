@@ -7,14 +7,6 @@ import java.util.function.Predicate;
 public class PeopleWarehouse {
     List<Person> roster = new ArrayList<>();
 
-/*    CheckPerson testFunc = (p) -> p.getGender() == Person.Sex.MALE
-            && p.getAge() >= 18
-            && p.getAge() <= 25;*/
-    public static Predicate<Person> selectiveService = (person -> person.getGender() == Person.Sex.MALE
-            && person.getAge() >= 18
-            && person.getAge() <= 25);
-
-
     public PeopleWarehouse() {
     }
 
@@ -26,7 +18,7 @@ public class PeopleWarehouse {
         return roster.size();
     }
 
-    public List<Person> getRoster () {
+    public List<Person> getRoster() {
         return roster;
     }
 
@@ -38,5 +30,31 @@ public class PeopleWarehouse {
         }
     }
 
+    public void selectiveService(List<Person> roster) {
+        Predicate<Person> tester = (person) -> person.getGender() == Person.Sex.MALE
+                && person.getAge() >= 18
+                && person.getAge() <= 25;
 
+        printPersons(roster, tester);
+    }
+
+    public void isOlderThan(List<Person> roster, Integer age) {
+        Predicate<Person> tester = (person) -> person.getAge() == age;
+
+        printPersons(roster, tester);
+    }
+
+
+    public void isMale(List<Person> roster) {
+        Predicate<Person> tester = (person) -> person.getGender() == Person.Sex.MALE;
+
+        printPersons(roster, tester);
+    }
+
+
+    public void isFemale(List<Person> roster) {
+        Predicate<Person> tester = (person) -> person.getGender() == Person.Sex.FEMALE;
+
+        printPersons(roster, tester);
+    }
 }
