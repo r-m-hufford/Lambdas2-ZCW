@@ -5,15 +5,8 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class PeopleWarehouse {
+    SearchCriteria searchCriteria = new SearchCriteria();
     List<Person> roster = new ArrayList<>();
-
-/*    CheckPerson testFunc = (p) -> p.getGender() == Person.Sex.MALE
-            && p.getAge() >= 18
-            && p.getAge() <= 25;*/
-    public static Predicate<Person> selectiveService = (person -> person.getGender() == Person.Sex.MALE
-            && person.getAge() >= 18
-            && person.getAge() <= 25);
-
 
     public PeopleWarehouse() {
     }
@@ -30,13 +23,10 @@ public class PeopleWarehouse {
         return roster;
     }
 
-    public void printPersons(List<Person> roster, Predicate<Person> tester) {
+    public void printPeople(List<Person> roster) {
         for (Person person : roster) {
-            if (tester.test(person)) {
-                person.printPerson();
-            }
+            System.out.println(person);
         }
     }
-
-
 }
+
