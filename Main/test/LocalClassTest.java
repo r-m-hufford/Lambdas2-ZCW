@@ -1,6 +1,4 @@
-import Java.PeopleWarehouse;
-import Java.Person;
-import Java.SearchCriteria;
+import Java.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +7,11 @@ import java.time.LocalDate;
 
 public class LocalClassTest {
 
+    SearchByAge olderThan25 = new SearchByAge();
+    EligibleForSelectiveService selectiveService = new EligibleForSelectiveService();
+    IsMale isMale = new IsMale();
+
     PeopleWarehouse warehouse;
-    SearchCriteria search = new SearchCriteria();
 
     @Before
     public void setUp() throws Exception {
@@ -27,22 +28,16 @@ public class LocalClassTest {
 
     @Test
     public void selectiveServiceTest() {
-        Assert.assertTrue(search.selectiveService(warehouse.getRoster()));
-
+        warehouse.printPeople(warehouse.getRoster(), selectiveService);
     }
 
     @Test
     public void isMale() {
-        Assert.assertTrue(search.isMale(warehouse.getRoster()));
+        warehouse.printPeople(warehouse.getRoster(),isMale);
     }
 
     @Test
     public void isOlderThan1(){
-        Assert.assertTrue(search.isOlderThan(warehouse.getRoster(), 20));
-    }
-
-    @Test
-    public void isOlderThan2(){
-        Assert.assertFalse(search.isOlderThan(warehouse.getRoster(), 45));
+        warehouse.printPeople(warehouse.getRoster(), olderThan25);
     }
 }

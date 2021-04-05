@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class PeopleWarehouse {
-    SearchCriteria searchCriteria = new SearchCriteria();
     List<Person> roster = new ArrayList<>();
 
     public PeopleWarehouse() {
@@ -23,8 +22,9 @@ public class PeopleWarehouse {
         return roster;
     }
 
-    public void printPeople(List<Person> roster) {
+    public void printPeople(List<Person> roster, CheckPerson tester) {
         for (Person person : roster) {
+            if (tester.test(person))
             System.out.println(person);
         }
     }
